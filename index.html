@@ -5,8 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quidax Book Club</title>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <link rel="stylesheet" href="index.css" />
+
+
 </head>
+<!-- 
+    TODO
+    - Add carousel.
+    - Carousel content on hover animation.
+    - Add search autocomplete.
+    - Observe breakpoints and add media queries.
+    - Replace placeholders with content i.e. avatar and logo.
+ -->
 
 <body>
     <nav>
@@ -55,7 +67,7 @@
                         </p>
                     </div>
                 </section>
-                <section class="sidebar-section mv-16">
+                <section class=" mv-16">
                     <div class="sidebar-header">
                         <p class="mv-8">
                             Explore
@@ -80,7 +92,7 @@
                         </p>
                     </div>
                 </section>
-                <section class="sidebar-section mv-16">
+                <section class=" mv-16">
                     <div class="sidebar-header">
                         <p class="mv-8">
                             My Books
@@ -117,7 +129,7 @@
                         </p>
                     </div>
                 </section>
-                <section class="sidebar-section mv-16">
+                <section class=" mv-16">
                     <div class="sidebar-header">
                         <p class="mv-8">
                             Admin
@@ -145,6 +157,83 @@
             </div>
         </div>
         <div class="main">
+            <section class="books">
+                <header>
+                    Featured Books
+                </header>
+                <section class="featured">
+                    <div class="carousel" data-flickity='{  "cellAlign": "left","freeScroll": true }'>
+                        <div class="carousel-cell">
+                            <img class="featured-cover" src=" /img/bbcdune.jpg" alt="book-cover">
+
+                        </div>
+                        <div class="carousel-cell">
+                            <img class="featured-cover" src="/img/city.jpg" alt="book-cover">
+                        </div>
+                        <div class="carousel-cell">
+                            <img class="featured-cover" src="/img/moana.jpg" alt="book-cover">
+                            <div class="book-details content-effect">
+                                <div class="availiabilty">
+                                    <p class="book-text mv-8 status-yes">
+                                        Available
+                                    </p>
+                                </div>
+                                <div class="book-info">
+                                    <p class="title">The Lazy Coder</p>
+                                    <p class="book-text mv-4">Adedapo Favour - 2009</p>
+                                    <p class="book-text mv-4">Technology</p>
+                                </div>
+                                <div class="metrics mv-8">
+                                    <div class="ratings">
+                                        Ratings
+                                    </div>
+                                    <div class="ratings">
+                                        Ratings
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-cell">
+                            <img class="featured-cover" src="/img/morning-sky.jpg" alt="book-cover">
+                        </div>
+                        <div class="carousel-cell">
+                            <img class="featured-cover" src="/img/out-of-the-box.jpg" alt="book-cover">
+                        </div>
+                        <div class="carousel-cell">
+                            <img class="featured-cover" src="/img/the-arsonist.jpg" alt="book-cover">
+                        </div>
+                        <div class="carousel-cell">
+                            <img class="featured-cover" src="/img/web-of-lies.jpeg" alt="book-cover">
+                        </div>
+                        <div class="carousel-cell">
+                            <img class="featured-cover" src="/img/city.jpg" alt="book-cover">
+                        </div>
+                        <div class="carousel-cell">
+                            <img class="featured-cover" src="/img/moana.jpg" alt="book-cover">
+                            <div class="book-details content-effect">
+                                <div class="availiabilty">
+                                    <p class="book-text mv-8 status-yes">
+                                        Available
+                                    </p>
+                                </div>
+                                <div class="book-info">
+                                    <p class="title">The Lazy Coder</p>
+                                    <p class="book-text mv-4">Adedapo Favour - 2009</p>
+                                    <p class="book-text mv-4">Technology</p>
+                                </div>
+                                <div class="metrics mv-8">
+                                    <div class="ratings">
+                                        Ratings
+                                    </div>
+                                    <div class="ratings">
+                                        Ratings
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
             <section class="books">
                 <header>
                     Recently Added

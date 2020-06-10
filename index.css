@@ -28,6 +28,7 @@ body {
 /* NAVIGATION */
 
 nav {
+  z-index: 99;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,6 +92,84 @@ main {
   max-width: 1360px;
 }
 
+/* FEATURED BOOKS SECTION */
+.featured {
+  margin-bottom: 48px;
+}
+
+.featured-cover {
+  opacity: 1;
+  width: 250px;
+  height: 300px;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.content-effect {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.carousel-cell:hover .featured-cover {
+  opacity: 0.3;
+}
+
+.carousel-cell:hover .content-effect {
+  opacity: 1;
+}
+
+/* FLICKITY CUSTOMIZATION */
+
+.carousel {
+  background: #eee;
+}
+
+.carousel-cell {
+  width: 250px;
+  height: 300px;
+  margin-right: 16px;
+  background: rgba(34, 30, 30, 0.267);
+  border-radius: 5px;
+}
+
+/* THE PREVIOUS AND NEXT BUTTONS */
+.flickity-button {
+  background: rgba(255, 255, 255, 0.19);
+}
+
+.flickity-button:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.flickity-prev-next-button {
+  width: 40px;
+  height: 300px;
+  border-radius: 0px;
+}
+/* ICON COLOR */
+.flickity-button-icon {
+  fill: black;
+}
+/* POSITIONING OUTSIDE */
+.flickity-prev-next-button.previous {
+  left: -30px;
+}
+.flickity-prev-next-button.next {
+  right: -30px;
+}
+
+/* PUSH DOTS DOWN */
+.flickity-page-dots {
+  bottom: -40px;
+}
+
+/* SIDEBAR CONTENT */
+
 .sidebar {
   margin: 0;
   width: 325px;
@@ -100,11 +179,16 @@ main {
   box-shadow: 2px 0 10px 0 rgba(0, 0, 0, 0.11);
 }
 
-.sidebar-content {
-  padding: 24px;
+.sidebar-header {
+  padding-top: 16px;
+  font-weight: bold;
+  border-top-width: 2px;
+  border-top-color: rgba(0, 0, 0, 0.3);
+  border-top-style: solid;
 }
 
-.sidebar-section {
+.sidebar-content {
+  padding: 24px;
 }
 
 .active {
@@ -133,15 +217,7 @@ main {
   margin: 0px;
 } */
 
-.sidebar-header {
-  padding-top: 16px;
-  font-weight: bold;
-  border-top-width: 2px;
-  border-top-color: rgba(0, 0, 0, 0.3);
-  border-top-style: solid;
-}
-
-/* Main content */
+/* OTHER BOOKS SECTION */
 
 .main {
   padding: 8px;
@@ -171,7 +247,6 @@ header {
 
 .book {
   display: flex;
-  /* align-items: center; */
 }
 
 .book:hover {
@@ -229,8 +304,8 @@ header {
 
 .circle-picture {
   background-color: bisque;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   margin: 0px 4px;
 }
