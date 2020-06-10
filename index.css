@@ -46,12 +46,23 @@ nav {
   width: 1360px;
   justify-content: space-between;
   flex-direction: row;
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
 }
 
 .tag {
@@ -72,6 +83,7 @@ nav {
 input[name='search'] {
   width: 450px;
   height: 30px;
+  margin: auto;
   padding: 4px 12px;
 }
 
@@ -80,6 +92,37 @@ input[name='search'] {
   justify-content: center;
   flex-direction: row;
   align-items: center;
+}
+
+.avatar {
+  margin: 0px 8px;
+}
+
+.navbar-icon {
+  margin: 0px 8px;
+}
+
+.notification {
+  position: relative;
+}
+
+.notification-count {
+  font-size: 12px;
+  font-weight: 900;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.notification-active {
+  background-color: rgb(18, 163, 18);
+  color: white;
+}
+
+.notification-count-position {
+  position: absolute;
+  top: -14px;
+  right: -4px;
 }
 
 /* MAIN SECTION */
@@ -298,22 +341,4 @@ header {
 }
 
 .ratings {
-}
-
-/* PLACEHOLDERS */
-
-.circle-picture {
-  background-color: bisque;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin: 0px 4px;
-}
-
-.circle-icon {
-  background-color: wheat;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  margin: 0px 4px;
 }

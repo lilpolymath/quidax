@@ -13,18 +13,26 @@
 </head>
 <!-- 
     TODO
-    - Add carousel.
+    - Add carousel. DONE
     - Carousel content on hover animation.
     - Add search autocomplete.
     - Observe breakpoints and add media queries.
-    - Replace placeholders with content i.e. avatar and logo.
+    - Replace placeholders with content i.e. avatar and logo. DONE
  -->
 
 <body>
     <nav>
         <div class="nav-container">
-            <div class="logo">
-                <div class="circle-picture"></div>
+            <div class="center">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-book">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                </div>
+
                 <div class="tag">
                     <p class="site-name">
                         Quidax Book Club
@@ -34,13 +42,33 @@
                     </p>
                 </div>
             </div>
-            <section class="search">
+            <div class="search">
                 <input type="text" placeholder="Search books, genres, authors etc." name="search" id="search" />
-            </section>
+            </div>
             <div class="main-nav">
-                <div class="circle-icon"></div>
-                <div class="circle-icon"></div>
-                <div class="circle-picture"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-search navbar-icon">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <div class="notification">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-bell navbar-icon">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                    </div>
+                    <div style="font-size: 18px;"
+                        class="notification-count notification-active  notification-count-position">
+                        <p class="center">
+                            3
+                        </p>
+                    </div>
+                </div>
+                <img class=" avatar" src="./img/profile.png" alt="">
             </div>
         </div>
     </nav>
@@ -62,7 +90,7 @@
                         <p class="mv-8">
                             Notifications
                         </p>
-                        <p class="badge">
+                        <p class="notification-count notification-active center">
                             3
                         </p>
                     </div>
@@ -77,18 +105,24 @@
                         <p class="mv-8">
                             Books
                         </p>
+                        <p class="notification-count center">
+                            273
+                        </p>
                     </div>
                     <div class="with-badge mv-4">
                         <p class="mv-8">
                             Genres
+                        </p>
+                        <p class="notification-count center">
+                            42
                         </p>
                     </div>
                     <div class="with-badge mv-4">
                         <p class="mv-8">
                             Authors
                         </p>
-                        <p class="badge">
-                            3
+                        <p class="notification-count center">
+                            106
                         </p>
                     </div>
                 </section>
@@ -102,7 +136,7 @@
                         <p class="mv-8">
                             Queued
                         </p>
-                        <p class="badge">
+                        <p class="notification-count center">
                             3
                         </p>
                     </div>
@@ -110,7 +144,7 @@
                         <p class="mv-8">
                             Borrowed
                         </p>
-                        <p class="badge">
+                        <p class="notification-count center">
                             0
                         </p>
                     </div>
@@ -118,7 +152,7 @@
                         <p class="mv-8">
                             Favourites
                         </p>
-                        <p class="badge">
+                        <p class="notification-count center">
                             19
                         </p>
 
@@ -139,19 +173,23 @@
                         <p class="mv-8">
                             Books Request
                         </p>
+                        <p class="notification-count notification-active center">
+                            2
+                        </p>
                     </div>
                     <div class="with-badge mv-4">
                         <p class="mv-8">
                             Members
+                        </p>
+                        <p class="notification-count center">
+                            34
                         </p>
                     </div>
                     <div class="with-badge mv-4">
                         <p class="mv-8">
                             Library Settings
                         </p>
-                        <p class="badge">
-                            3
-                        </p>
+
                     </div>
                 </section>
             </div>
