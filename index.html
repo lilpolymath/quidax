@@ -8,15 +8,13 @@
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <link rel="stylesheet" href="index.css" />
-
-
 </head>
 <!-- 
     TODO
     - Add carousel. DONE.
     - Carousel content on hover animation. DONE.
     - Add search autocomplete.
-    - Observe breakpoints and add media queries.
+    - Observe breakpoints and add media queries. DONE.
     - Replace placeholders with content i.e. avatar and logo. DONE.
     - Complete book listing details. DONE.
  -->
@@ -25,8 +23,17 @@
     <nav>
         <div class="nav-container">
             <div class="center">
+                <div id="action" class="hamburger">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-menu">
+                        <line x1="0" y1="12" x2="21" y2="12"></line>
+                        <line x1="0" y1="6" x2="12" y2="6"></line>
+                        <line x1="0" y1="18" x2="12" y2="18"></line>
+                    </svg>
+                </div>
                 <div class="logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
                         stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="feather feather-book">
                         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
@@ -47,12 +54,14 @@
                 <input type="text" placeholder="Search books, genres, authors etc." name="search" id="search" />
             </div>
             <div class="main-nav">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="feather feather-search navbar-icon">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-search navbar-icon">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </div>
                 <div class="notification">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -73,8 +82,35 @@
         </div>
     </nav>
     <main>
-        <div class="sidebar">
+        <div id="sidebar" class="sidebar collapsed">
             <div class="sidebar-content">
+                <div class="toggle">
+                    <div id="action" class="back">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-arrow-left">
+                            <line x1="19" y1="12" x2="5" y2="12" />
+                            <polyline points="12 19 5 12 12 5" /></svg>
+                    </div>
+                    <div class="menu mv-8">
+                        <div class="logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-book">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="tag">
+                            <p class="site-name">
+                                Quidax Book Club
+                            </p>
+                            <p class="site-tag">
+                                Admin
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <section>
                     <div class="with-badge mv-4">
                         <p class="active mv-8">
@@ -202,7 +238,7 @@
                 <section class="featured">
                     <div class="carousel" data-flickity='{  "cellAlign": "left","freeScroll": true }'>
                         <div class="carousel-cell">
-                            <img class="featured-cover" src=" /img/bbcdune.jpg" alt="book-cover">
+                            <img class="featured-cover" src="/img/bbcdune.jpg" alt="book-cover">
                             <div class="book-details width-80p content-effect white">
                                 <div class="availiabilty">
                                     <p class="book-text mv-8 status-yes">
@@ -223,7 +259,7 @@
                                         <p class="book-text">Ratings: 4.0</p>
                                         <div class="stars">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -231,7 +267,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -239,7 +275,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -247,7 +283,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -314,7 +350,7 @@
                                         <p class="book-text">Ratings: 4.0</p>
                                         <div class="stars">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -322,7 +358,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -330,7 +366,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -338,7 +374,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -405,7 +441,7 @@
                                         <p class="book-text">Ratings: 4.0</p>
                                         <div class="stars">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -413,7 +449,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -421,7 +457,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -429,7 +465,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -496,7 +532,7 @@
                                         <p class="book-text">Ratings: 4.0</p>
                                         <div class="stars">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -504,7 +540,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -512,7 +548,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -520,7 +556,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -587,7 +623,7 @@
                                         <p class="book-text">Ratings: 4.0</p>
                                         <div class="stars">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -595,7 +631,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -603,7 +639,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -611,7 +647,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -678,7 +714,7 @@
                                         <p class="book-text">Ratings: 4.0</p>
                                         <div class="stars">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -686,7 +722,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -694,7 +730,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -702,7 +738,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -769,7 +805,7 @@
                                         <p class="book-text">Ratings: 4.0</p>
                                         <div class="stars">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -777,7 +813,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -785,7 +821,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -793,7 +829,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -860,7 +896,7 @@
                                         <p class="book-text">Ratings: 4.0</p>
                                         <div class="stars">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -868,7 +904,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -876,7 +912,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -884,7 +920,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -951,7 +987,7 @@
                                         <p class="book-text">Ratings: 4.0</p>
                                         <div class="stars">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -959,7 +995,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -967,7 +1003,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -975,7 +1011,7 @@
                                                 </polygon>
                                             </svg>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                                viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-star">
                                                 <polygon
@@ -1048,28 +1084,28 @@
                                     <p class="book-text">Ratings: 4.0</p>
                                     <div class="stars">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
@@ -1132,28 +1168,28 @@
                                     <p class="book-text">Ratings: 4.0</p>
                                     <div class="stars">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
@@ -1216,28 +1252,28 @@
                                     <p class="book-text">Ratings: 4.0</p>
                                     <div class="stars">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
@@ -1300,28 +1336,28 @@
                                     <p class="book-text">Ratings: 4.0</p>
                                     <div class="stars">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
@@ -1384,28 +1420,28 @@
                                     <p class="book-text">Ratings: 4.0</p>
                                     <div class="stars">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
@@ -1468,28 +1504,28 @@
                                     <p class="book-text">Ratings: 4.0</p>
                                     <div class="stars">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
@@ -1560,28 +1596,28 @@
                                     <p class="book-text">Ratings: 4.0</p>
                                     <div class="stars">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
@@ -1644,28 +1680,28 @@
                                     <p class="book-text">Ratings: 4.0</p>
                                     <div class="stars">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
@@ -1728,28 +1764,28 @@
                                     <p class="book-text">Ratings: 4.0</p>
                                     <div class="stars">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
@@ -1812,28 +1848,28 @@
                                     <p class="book-text">Ratings: 4.0</p>
                                     <div class="stars">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
@@ -1896,28 +1932,28 @@
                                     <p class="book-text">Ratings: 4.0</p>
                                     <div class="stars">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
@@ -1980,28 +2016,28 @@
                                     <p class="book-text">Ratings: 4.0</p>
                                     <div class="stars">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
@@ -2064,112 +2100,28 @@
                                     <p class="book-text">Ratings: 4.0</p>
                                     <div class="stars">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
-                                            <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                            </polygon>
-                                        </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="grey" stroke="grey" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
-                                            <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                            </polygon>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="separator mh-8"></div>
-                                <div class="feedback">
-                                    <div class="middle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="feather feather-users">
-                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                            <circle cx="9" cy="7" r="4"></circle>
-                                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                        </svg>
-                                        <p class="book-text mv-4">31</p>
-                                    </div>
-                                    <div class="middle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="feather feather-heart">
-                                            <path
-                                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                                        </svg>
-                                        <p class="book-text mv-4">24</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="book">
-                        <div class="book-cover">
-                            <img class="book-cover-image" src="/img/bbcdune.jpg" alt="book-cover">
-                        </div>
-                        <div class="book-details mh-12">
-                            <div class="availiabilty">
-                                <p class="book-text mv-8 status-yes">
-                                    Available
-                                </p>
-                            </div>
-                            <div class="book-info">
-                                <p class="title">The Lazy Coder</p>
-                                <p class="book-text mv-4">Adedapo Favour - 2009</p>
-                                <p class="book-text mv-4">Technology</p>
-                            </div>
-                            <div class="metrics mv-8">
-                                <div class="ratings">
-                                    <p class="book-text">Ratings: 4.0</p>
-                                    <div class="stars">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
-                                            <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                            </polygon>
-                                        </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
-                                            <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                            </polygon>
-                                        </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
-                                            <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                            </polygon>
-                                        </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
@@ -2232,28 +2184,112 @@
                                     <p class="book-text">Ratings: 4.0</p>
                                     <div class="stars">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                             </polygon>
                                         </svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                            viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                                            <polygon
+                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                            </polygon>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                            viewBox="0 0 24 24" fill="grey" stroke="grey" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                                            <polygon
+                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                            </polygon>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="separator mh-8"></div>
+                                <div class="feedback">
+                                    <div class="middle">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-users">
+                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="9" cy="7" r="4"></circle>
+                                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                        </svg>
+                                        <p class="book-text mv-4">31</p>
+                                    </div>
+                                    <div class="middle">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-heart">
+                                            <path
+                                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                        </svg>
+                                        <p class="book-text mv-4">24</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book">
+                        <div class="book-cover">
+                            <img class="book-cover-image" src="/img/bbcdune.jpg" alt="book-cover">
+                        </div>
+                        <div class="book-details mh-12">
+                            <div class="availiabilty">
+                                <p class="book-text mv-8 status-yes">
+                                    Available
+                                </p>
+                            </div>
+                            <div class="book-info">
+                                <p class="title">The Lazy Coder</p>
+                                <p class="book-text mv-4">Adedapo Favour - 2009</p>
+                                <p class="book-text mv-4">Technology</p>
+                            </div>
+                            <div class="metrics mv-8">
+                                <div class="ratings">
+                                    <p class="book-text">Ratings: 4.0</p>
+                                    <div class="stars">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                                            <polygon
+                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                            </polygon>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                                            <polygon
+                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                            </polygon>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                                            <polygon
+                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                            </polygon>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                            viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                                             <polygon
                                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
@@ -2300,6 +2336,8 @@
             </section>
         </div>
     </main>
+
+    <script type="text/javascript" src="./index.js"></script>
 </body>
 
 </html>

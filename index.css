@@ -49,7 +49,7 @@ nav {
   top: 0;
   left: 0;
   background-color: white;
-  padding: 12px 20px;
+  padding: 12px 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.11);
 }
 
@@ -67,6 +67,11 @@ nav {
   align-items: center;
 }
 
+.menu {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
   display: flex;
   justify-content: center;
@@ -77,6 +82,9 @@ nav {
   border-radius: 50%;
 }
 
+.hamburger {
+  display: none;
+}
 .tag {
   margin-left: 8px;
 }
@@ -94,7 +102,7 @@ nav {
 }
 
 input[name='search'] {
-  width: 450px;
+  min-width: 450px;
   height: 30px;
   margin: auto;
   padding: 4px 12px;
@@ -134,8 +142,8 @@ input[name='search'] {
 
 .notification-count-position {
   position: absolute;
-  top: -14px;
-  right: -4px;
+  top: -10px;
+  right: 0;
 }
 
 /* MAIN SECTION */
@@ -156,8 +164,8 @@ main {
 
 .featured-cover {
   opacity: 1;
-  width: 250px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
   transition: 0.5s ease;
   backface-visibility: hidden;
 }
@@ -256,6 +264,10 @@ main {
   overflow: auto;
   height: 100%;
   box-shadow: 2px 0 10px 0 rgba(0, 0, 0, 0.11);
+}
+
+.toggle {
+  display: none;
 }
 
 .sidebar-header {
@@ -380,4 +392,104 @@ header {
 .feedback {
   display: flex;
   justify-content: space-around;
+}
+
+@media (max-width: 768px) {
+  nav {
+    height: 50px;
+  }
+
+  .hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+
+  .center > .tag {
+    display: none;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .toggle {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background: white;
+    width: 300px;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.5);
+    transition: width 0.35s;
+  }
+
+  .sidebar.collapsed {
+    width: 0;
+  }
+
+  .main {
+    margin: 0;
+  }
+
+  input[name='search'] {
+    display: none;
+  }
+
+  .books {
+    margin: 12px;
+  }
+
+  .carousel-cell {
+    width: 150px;
+    height: 200px;
+    margin-right: 16px;
+  }
+
+  .flickity-prev-next-button.previous {
+    left: -24px;
+  }
+
+  .flickity-prev-next-button.next {
+    right: -24px;
+  }
+
+  .book-details > .mv-16 {
+    margin: 8px 0;
+  }
+
+  .book-info > .mv-16 {
+    display: none;
+  }
+
+  .metrics {
+    flex-direction: column;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .feedback {
+    justify-content: start;
+  }
+
+  .middle {
+    margin: 0;
+    margin-right: 8px;
+  }
 }
