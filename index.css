@@ -17,12 +17,24 @@ body {
   margin: 8px 0px;
 }
 
+.mv-12 {
+  margin: 12px 0;
+}
+
 .mv-16 {
   margin: 16px 0;
 }
 
 .mv-24 {
   margin: 24px 0;
+}
+
+.mh-8 {
+  margin: 0 8px;
+}
+
+.mh-12 {
+  margin: 0 12px;
 }
 
 /* NAVIGATION */
@@ -160,7 +172,7 @@ main {
   -ms-transform: translate(-50%, -50%);
 }
 
-.book-text-white {
+.white {
   color: white;
 }
 
@@ -179,7 +191,7 @@ main {
 /* FLICKITY CUSTOMIZATION */
 
 .carousel {
-  background: #eee;
+  background: white;
 }
 
 .carousel-cell {
@@ -187,7 +199,6 @@ main {
   height: 300px;
   margin-right: 16px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 10%, rgb(0, 0, 0));
-  border-radius: 5px;
 }
 
 /* THE PREVIOUS AND NEXT BUTTONS */
@@ -226,6 +237,14 @@ main {
 
 .flickity-page-dots {
   bottom: -40px;
+}
+
+.flickity-page-dots .dot.is-selected {
+  background: #18ff18;
+}
+
+.flickity-page-dots .dot {
+  margin: 6px;
 }
 
 /* SIDEBAR CONTENT */
@@ -293,7 +312,7 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 24px;
-  grid-auto-rows: 150px;
+  grid-auto-rows: 175px;
 }
 
 .book {
@@ -304,13 +323,9 @@ header {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.book-cover {
-  margin-right: 8px;
-}
-
 .book-cover-image {
   width: 120px;
-  height: 150px;
+  height: 175px;
 }
 
 .book-details {
@@ -319,22 +334,18 @@ header {
   justify-content: space-around;
 }
 
-.availiability {
-}
-
 .book-text {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .status-yes {
-  color: green;
+  color: #11d211;
+  font-weight: bold;
 }
 
 .status-no {
   color: red;
-}
-
-.book-info {
+  font-weight: bold;
 }
 
 .title {
@@ -345,8 +356,28 @@ header {
 .metrics {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .ratings {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.separator {
+  border-right-width: 1px;
+  border-right-color: #80808094;
+  border-right-style: solid;
+}
+
+.middle {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 4px;
+}
+
+.feedback {
+  display: flex;
+  justify-content: space-around;
 }
